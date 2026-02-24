@@ -3,9 +3,20 @@
 function CountForInterview(){
     const totalIn = document.getElementById('total');
     const total= totalIn.innerText;
+
+
+    const semiTotalIn = document.getElementById('semi-total');
+    const semiTotal= totalIn.innerText;
+
+
     const interviewIn = document.getElementById('interview');
     const interview= interviewIn.innerText;
     const totalNew=Number(total)-1;
+
+    const semiTotalNew=Number(total)-1;
+    document.getElementById('semi-total').innerText= semiTotalNew;
+
+
     document.getElementById('total').innerText= totalNew;
     const interviewNew=Number(interview)+1;
     document.getElementById('interview').innerText= interviewNew;
@@ -18,12 +29,20 @@ function CountForInterview(){
 function CountForRejected(){
     const totalIn = document.getElementById('total');
     const total= totalIn.innerText;
-    console.log(total);
+
+    const semiTotalIn = document.getElementById('semi-total');
+    const semiTotal= totalIn.innerText;
+    
     const rejectedIn = document.getElementById('rejected');
     const rejected= rejectedIn.innerText;
-    console.log(rejected);
+    
     const totalNew=Number(total)-1;
     document.getElementById('total').innerText= totalNew;
+
+    const semiTotalNew=Number(total)-1;
+    document.getElementById('semi-total').innerText= semiTotalNew;
+
+    
     const rejectedNew=Number(rejected)+1;
     document.getElementById('rejected').innerText= rejectedNew;
 
@@ -65,24 +84,9 @@ function interviewPage(){
 
 
     }
-    else{
-        document.getElementById('section-0ne').classList.add('hidden');
-        document.getElementById('section-two').classList.add('hidden');
-        document.getElementById('section-three').classList.add('hidden');
-        document.getElementById('section-four').classList.add('hidden');
-        document.getElementById('section-five').classList.add('hidden');
-        document.getElementById('section-six').classList.add('hidden');
-        document.getElementById('section-seven').classList.add('hidden');
-        document.getElementById('section-eight').classList.add('hidden');
-
-        
-        
-    }
     
-    function interviewClick(value){
-        document.getElementById(value).classList.remove('hidden');
-        
-    }
+    
+    
 }
    
 function rejectedPage(){
@@ -115,5 +119,25 @@ function mainPage(){
 
     }
 
+
+    function interviewClick(value){
+        document.getElementById('defaultIRpage').classList.add('hidden');
+
+        const mainIn = document.getElementById(value);
+        const main = mainIn.innerHTML;
+
+
+        const copyIn = document.getElementById('card-section-interview');
+        const copy = document.createElement('div');
+        copy=main;
+        copyIn.appendChild(copy);
+
+    }
+
+
+    function deleteBtn(value){
+       const deleteB = document.getElementById(value);
+       deleteB.classList.add('hidden');
+    }
 
     

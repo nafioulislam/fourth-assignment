@@ -56,14 +56,18 @@
         <section>
             <div class="flex justify-between py-5" >
                 <h2 class="text-xl font-bold">Available Jobs</h2>
-                <p>8 jobs</p>
+                <p><span id="semi-total">8</span> jobs</p>
             </div>
 
             <div class="pb-5">
 
-                <button class="btn" id="allHtml" onclick="mainPage()">All</button>
+                <!-- <button class="btn" id="allHtml" onclick="mainPage()">All</button>
                 <button class="btn" id="InterviewHtml" onclick="interviewPage()">Interview</button>
-                <button class="btn" id="RejectedHtml" onclick="rejectedPage()">Rejected</button>
+                <button class="btn" id="RejectedHtml" onclick="rejectedPage()">Rejected</button> -->
+
+                <a href="index.html" class="btn" >All</a>
+                <a href="interview.html" class="btn">Interview</a>
+                <a href="rejected.html" class="btn">Rejected</a>
            
             </div>
         </section>
@@ -73,14 +77,17 @@
                 <div class="flex justify-between">
                     <h2 class="text-xl font-bold ">Mobile First Corp</h2>
 
-                    <button id="delete-one"><i class="fa-solid fa-trash"></i></button>
+                    <button id="delete-one" onclick="deleteBtn('section-0ne')"
+                    ><i class="fa-solid fa-trash"></i></button>
 
                 </div >
                 <p class="py-3 text-black/50">React Native Developer</p>
                 
                 <p class="pb-5 text-black/50">Remote • Full-time • $130,000 - $175,000</p>
 
-                <div id="cancel-btn-div-one"><button class="btn btn-soft" id="change-button-one">Not Applied</button></div>
+                <div id="cancel-btn-div-one">
+                    <button class="btn btn-soft" id="change-button-one">Not Applied</button>
+                </div>
 
                 <p class="py-3">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
 
@@ -95,20 +102,22 @@
                 <div class="flex justify-between">
                     <h2 class="text-xl font-bold ">WebFlow Agency</h2>
 
-                    <button id="delete-two"><i class="fa-solid fa-trash"></i></button>
+                    <button id="delete-two"onclick="deleteBtn('section-two')"><i class="fa-solid fa-trash"></i></button>
 
                 </div>
                 <p class="py-3 text-black/50">Web Designer & Developer</p>
                 
                 <p class="pb-5 text-black/50">Los Angeles, CA • Part-time • $80,000 - $120,000</p>
 
-                <button class="btn btn-soft" id="change-button-two">Not Applied</button>
+                <div id="cancel-btn-div-two">
+                    <button class="btn btn-soft" id="change-button-two">Not Applied</button>
+                </div>
 
                 <p class="py-3">Create stunning web experiences for high-profile clients. Must have portfolio and experience with modern web design trends.</p>
 
                 <div>
-                    <button class="btn btn-outline btn-success" id="interview-button-two" onclick="CountForRejected()">interview</button>
-                    <button class="btn btn-outline btn-error" id="rejected-button-two" onclick="CountForInterview()">Rejected</button>
+                    <button class="btn btn-outline btn-success" id="interview-button-two" onclick="CountForInterview();changeButtonInter('change-button-two','cancel-btn-div-two');interviewClick('section-0ne')">interview</button>
+                    <button class="btn btn-outline btn-error" id="rejected-button-two" onclick="CountForRejected();changeButtonReje('change-button-two','cancel-btn-div-two')">Rejected</button>
                 </div>
             </div>
         </section>
@@ -117,20 +126,22 @@
                 <div class="flex justify-between">
                     <h2 class="text-xl font-bold ">DataViz Solutions</h2>
 
-                    <button id="delete-three"><i class="fa-solid fa-trash"></i></button>
+                    <button id="delete-three"onclick="deleteBtn('section-three')"><i class="fa-solid fa-trash"></i></button>
 
                 </div>
                 <p class="py-3 text-black/50">Data Visualization Specialist</p>
                 
                 <p class="pb-5 text-black/50">Boston, MA • Full-time • $125,000 - $165,000</p>
 
-                <button class="btn btn-soft" id="change-button-three">Not Applied</button>
+                <div id="cancel-btn-div-three">
+                    <button class="btn btn-soft" id="change-button-three">Not Applied</button>
+                </div>
 
                 <p class="py-3">Transform complex data into compelling visualizations. Required skills: D3.js, React, and strong analytical thinking.</p>
 
                 <div>
-                    <button class="btn btn-outline btn-success" id="interview-button-three"onclick="CountForInterview()">interview</button>
-                    <button class="btn btn-outline btn-error" id="rejected-button-three"onclick="CountForRejected()">Rejected</button>
+                    <button class="btn btn-outline btn-success" id="interview-button-three"onclick="CountForInterview();changeButtonInter('change-button-three','cancel-btn-div-three');interviewClick('section-0ne')">interview</button>
+                    <button class="btn btn-outline btn-error" id="rejected-button-three"onclick="CountForRejected();changeButtonReje('change-button-three','cancel-btn-div-three')">Rejected</button>
                 </div>
             </div>
         </section>
@@ -139,20 +150,22 @@
                 <div class="flex justify-between">
                     <h2 class="text-xl font-bold ">CloudFirst Inc</h2>
 
-                    <button id="delete-four"><i class="fa-solid fa-trash"></i></button>
+                    <button id="delete-four"onclick="deleteBtn('section-four')"><i class="fa-solid fa-trash"></i></button>
 
                 </div>
                 <p class="py-3 text-black/50">Backend Developer</p>
                 
                 <p class="pb-5 text-black/50">Seattle, WA • Full-time • $140,000 - $190,000</p>
 
-                <button class="btn btn-soft" id="change-button-four">Not Applied</button>
+                <div id="cancel-btn-div-four">
+                    <button class="btn btn-soft" id="change-button-four">Not Applied</button>
+                </div>
 
                 <p class="py-3">Design and maintain scalable backend systems using Python and AWS. Work with modern DevOps practices and cloud infrastructure.</p>
 
                 <div>
-                    <button class="btn btn-outline btn-success" id="interview-button-four"onclick="CountForInterview()">interview</button>
-                    <button class="btn btn-outline btn-error" id="rejected-button-four"onclick="CountForRejected()">Rejected</button>
+                    <button class="btn btn-outline btn-success" id="interview-button-four"onclick="CountForInterview();changeButtonInter('change-button-four','cancel-btn-div-four');interviewClick('section-0ne')">interview</button>
+                    <button class="btn btn-outline btn-error" id="rejected-button-four"onclick="CountForRejected();changeButtonReje('change-button-four','cancel-btn-div-four')">Rejected</button>
                 </div>
             </div>
         </section>
@@ -161,20 +174,22 @@
                 <div class="flex justify-between">
                     <h2 class="text-xl font-bold ">MegaCorp Solutions</h2>
 
-                    <button id="delete-five"><i class="fa-solid fa-trash"></i></button>
+                    <button id="delete-five"onclick="deleteBtn('section-five')"><i class="fa-solid fa-trash"></i></button>
 
                 </div>
                 <p class="py-3 text-black/50">JavaScript Developer</p>
                 
                 <p class="pb-5 text-black/50">New York, NY • Full-time • $130,000 - $170,00</p>
 
-                <button class="btn btn-soft" id="change-button-five">Not Applied</button>
+                <div id="cancel-btn-div-five">
+                    <button class="btn btn-soft" id="change-button-five">Not Applied</button>
+                </div>
 
                 <p class="py-3">Build enterprise applications with JavaScript and modern frameworks. We offer competitive compensation, health insurance, and professional development opportunities.</p>
 
                 <div>
-                    <button class="btn btn-outline btn-success" id="interview-button-five"onclick="CountForInterview()">interview</button>
-                    <button class="btn btn-outline btn-error" id="rejected-button-five"onclick="CountForRejected()">Rejected</button>
+                    <button class="btn btn-outline btn-success" id="interview-button-five"onclick="CountForInterview();changeButtonInter('change-button-five','cancel-btn-div-five');interviewClick('section-0ne')">interview</button>
+                    <button class="btn btn-outline btn-error" id="rejected-button-five"onclick="CountForRejected();changeButtonReje('change-button-five','cancel-btn-div-five')">Rejected</button>
                 </div>
             </div>
         </section>
@@ -183,20 +198,22 @@
                 <div class="flex justify-between">
                     <h2 class="text-xl font-bold ">StartupXYZ</h2>
 
-                    <button id="delete-six"><i class="fa-solid fa-trash"></i></button>
+                    <button id="delete-six"onclick="deleteBtn('section-six')"><i class="fa-solid fa-trash"></i></button>
 
                 </div>
                 <p class="py-3 text-black/50">Full Stack Engineer</p>
                 
                 <p class="pb-5 text-black/50">Remote • Full-time • $130,000 - $175,000</p>
 
-                <button class="btn btn-soft" id="change-button-six">Not Applied</button>
+                <div id="cancel-btn-div-six">
+                    <button class="btn btn-soft" id="change-button-six">Not Applied</button>
+                </div>
 
                 <p class="py-3">Join our fast-growing startup and work on our core platform. Experience with Node.js and React required. Great benefits and equity package included.</p>
 
                 <div>
-                    <button class="btn btn-outline btn-success" id="interview-button-six"onclick="CountForInterview()">interview</button>
-                    <button class="btn btn-outline btn-error" id="rejected-button-six"onclick="CountForRejected()">Rejected</button>
+                    <button class="btn btn-outline btn-success" id="interview-button-six"onclick="CountForInterview();changeButtonInter('change-button-six','cancel-btn-div-six');interviewClick('section-0ne')">interview</button>
+                    <button class="btn btn-outline btn-error" id="rejected-button-six"onclick="CountForRejected();changeButtonReje('change-button-six','cancel-btn-div-six')">Rejected</button>
                 </div>
             </div>
         </section>
@@ -205,20 +222,22 @@
                 <div class="flex justify-between">
                     <h2 class="text-xl font-bold ">TechCorp Industries</h2>
 
-                    <button id="delete-seven"><i class="fa-solid fa-trash"></i></button>
+                    <button id="delete-seven"onclick="deleteBtn('section-seven')"><i class="fa-solid fa-trash"></i></button>
 
                 </div>
                 <p class="py-3 text-black/50">Senior Frontend Developer</p>
                 
                 <p class="pb-5 text-black/50">San Francisco, CA • Full-time • $130,000 - $175,000</p>
 
-                <button class="btn btn-soft" id="change-button-seven">Not Applied</button>
+                <div id="cancel-btn-div-seven">
+                    <button class="btn btn-soft" id="change-button-seven">Not Applied</button>
+                </div>
 
                 <p class="py-3">We are looking for an experienced Frontend Developer to build scalable web applications using React and TypeScript. You will work with a talented team on cutting-edge projects.</p>
 
                 <div>
-                    <button class="btn btn-outline btn-success" id="interview-button-seven"onclick="CountForInterview()">interview</button>
-                    <button class="btn btn-outline btn-error" id="rejected-button-seven"onclick="CountForRejected()">Rejected</button>
+                    <button class="btn btn-outline btn-success" id="interview-button-seven"onclick="CountForInterview();changeButtonInter('change-button-seven','cancel-btn-div-seven');interviewClick('section-0ne')">interview</button>
+                    <button class="btn btn-outline btn-error" id="rejected-button-seven"onclick="CountForRejected();changeButtonReje('change-button-seven','cancel-btn-div-seven')">Rejected</button>
                 </div>
             </div>
         </section>
@@ -227,20 +246,22 @@
                 <div class="flex justify-between">
                     <h2 class="text-xl font-bold ">Mobile First Corp</h2>
 
-                    <button id="delete-eight"><i class="fa-solid fa-trash"></i></button>
+                    <button id="delete-eight"onclick="deleteBtn('section-eight')"><i class="fa-solid fa-trash"></i></button>
 
                 </div>
                 <p class="py-3 text-black/50">React Native Developer</p>
                 
                 <p class="pb-5 text-black/50">Remote • Full-time • $130,000 - $175,000</p>
 
-                <button class="btn btn-soft" id="change-button-eight">Not Applied</button>
+                <div id="cancel-btn-div-eight">
+                    <button class="btn btn-soft" id="change-button-eight">Not Applied</button>
+                </div>
 
                 <p class="py-3">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
 
                 <div>
-                    <button class="btn btn-outline btn-success" id="interview-button-eight"onclick="CountForInterview()">interview</button>
-                    <button class="btn btn-outline btn-error" id="rejected-button-eight"onclick="CountForRejected()">Rejected</button>
+                    <button class="btn btn-outline btn-success" id="interview-button-eight"onclick="CountForInterview();changeButtonInter('change-button-eight','cancel-btn-div-eight');interviewClick('section-0ne')">interview</button>
+                    <button class="btn btn-outline btn-error" id="rejected-button-eight"onclick="CountForRejected();changeButtonReje('change-button-eight','cancel-btn-div-eight')">Rejected</button>
                 </div>
             </div>
         </section>
